@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		07D5649320A7689D006B97DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5649220A7689D006B97DC /* AppDelegate.swift */; };
-		07D5649520A7689D006B97DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5649420A7689D006B97DC /* ViewController.swift */; };
+		07D5649520A7689D006B97DC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5649420A7689D006B97DC /* LogInViewController.swift */; };
 		07D5649820A7689D006B97DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D5649620A7689D006B97DC /* Main.storyboard */; };
 		07D5649A20A7689D006B97DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D5649920A7689D006B97DC /* Assets.xcassets */; };
 		07D5649D20A7689D006B97DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D5649B20A7689D006B97DC /* LaunchScreen.storyboard */; };
+		07D564A620A77618006B97DC /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D564A520A77618006B97DC /* MessageModel.swift */; };
+		07D564A820A77628006B97DC /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D564A720A77628006B97DC /* ProfileModel.swift */; };
+		07D564B120AA3E7E006B97DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D564B020AA3E7D006B97DC /* GoogleService-Info.plist */; };
+		07D564B320AB5867006B97DC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D564B220AB5867006B97DC /* RegisterViewController.swift */; };
+		07D564B520AB5A32006B97DC /* daniel-gonzalez-602501-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07D564B420AB5A32006B97DC /* daniel-gonzalez-602501-unsplash.jpg */; };
+		07D564B720AB5AB4006B97DC /* leio-mclaren-300912-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07D564B620AB5AB4006B97DC /* leio-mclaren-300912-unsplash.jpg */; };
+		488B6E622E036CF5F0C7FA1A /* Pods_TravelBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E381D82FEDC80C6531F08FC3 /* Pods_TravelBoard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07D5648F20A7689D006B97DC /* TravelBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D5649220A7689D006B97DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07D5649420A7689D006B97DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07D5649420A7689D006B97DC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		07D5649720A7689D006B97DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07D5649920A7689D006B97DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07D5649C20A7689D006B97DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07D5649E20A7689D006B97DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07D564A520A77618006B97DC /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		07D564A720A77628006B97DC /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		07D564B020AA3E7D006B97DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07D564B220AB5867006B97DC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		07D564B420AB5A32006B97DC /* daniel-gonzalez-602501-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "daniel-gonzalez-602501-unsplash.jpg"; sourceTree = "<group>"; };
+		07D564B620AB5AB4006B97DC /* leio-mclaren-300912-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "leio-mclaren-300912-unsplash.jpg"; sourceTree = "<group>"; };
+		2D89632BE4DF873AA03F2425 /* Pods-TravelBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelBoard/Pods-TravelBoard.release.xcconfig"; sourceTree = "<group>"; };
+		E381D82FEDC80C6531F08FC3 /* Pods_TravelBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB73B7D2386274304F1D323A /* Pods-TravelBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelBoard/Pods-TravelBoard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488B6E622E036CF5F0C7FA1A /* Pods_TravelBoard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				07D5649120A7689D006B97DC /* TravelBoard */,
+				07D5649920A7689D006B97DC /* Assets.xcassets */,
+				07D564AC20A77670006B97DC /* Supporting Files */,
 				07D5649020A7689D006B97DC /* Products */,
+				27D3399AE5E81D9F978543E7 /* Pods */,
+				AC61579DB459AC76117AE5F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +75,75 @@
 		07D5649120A7689D006B97DC /* TravelBoard */ = {
 			isa = PBXGroup;
 			children = (
-				07D5649220A7689D006B97DC /* AppDelegate.swift */,
-				07D5649420A7689D006B97DC /* ViewController.swift */,
-				07D5649620A7689D006B97DC /* Main.storyboard */,
-				07D5649920A7689D006B97DC /* Assets.xcassets */,
-				07D5649B20A7689D006B97DC /* LaunchScreen.storyboard */,
 				07D5649E20A7689D006B97DC /* Info.plist */,
+				07D564B020AA3E7D006B97DC /* GoogleService-Info.plist */,
+				07D564A420A775FE006B97DC /* Model */,
+				07D564A920A7762E006B97DC /* View */,
+				07D564AB20A7765C006B97DC /* Controller */,
 			);
 			path = TravelBoard;
+			sourceTree = "<group>";
+		};
+		07D564A420A775FE006B97DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07D564A520A77618006B97DC /* MessageModel.swift */,
+				07D564A720A77628006B97DC /* ProfileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07D564A920A7762E006B97DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07D5649620A7689D006B97DC /* Main.storyboard */,
+				07D5649B20A7689D006B97DC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07D564AB20A7765C006B97DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07D5649220A7689D006B97DC /* AppDelegate.swift */,
+				07D5649420A7689D006B97DC /* LogInViewController.swift */,
+				07D564B220AB5867006B97DC /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		07D564AC20A77670006B97DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07D564AD20AA294C006B97DC /* Images */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07D564AD20AA294C006B97DC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				07D564B420AB5A32006B97DC /* daniel-gonzalez-602501-unsplash.jpg */,
+				07D564B620AB5AB4006B97DC /* leio-mclaren-300912-unsplash.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		27D3399AE5E81D9F978543E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB73B7D2386274304F1D323A /* Pods-TravelBoard.debug.xcconfig */,
+				2D89632BE4DF873AA03F2425 /* Pods-TravelBoard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AC61579DB459AC76117AE5F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E381D82FEDC80C6531F08FC3 /* Pods_TravelBoard.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07D564A120A7689D006B97DC /* Build configuration list for PBXNativeTarget "TravelBoard" */;
 			buildPhases = (
+				A2F73A58A2B5AA6E72B5250C /* [CP] Check Pods Manifest.lock */,
 				07D5648B20A7689D006B97DC /* Sources */,
 				07D5648C20A7689D006B97DC /* Frameworks */,
 				07D5648D20A7689D006B97DC /* Resources */,
+				752E411B6C3B9138739AABC4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,20 +208,75 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D5649D20A7689D006B97DC /* LaunchScreen.storyboard in Resources */,
+				07D564B120AA3E7E006B97DC /* GoogleService-Info.plist in Resources */,
 				07D5649A20A7689D006B97DC /* Assets.xcassets in Resources */,
+				07D564B520AB5A32006B97DC /* daniel-gonzalez-602501-unsplash.jpg in Resources */,
 				07D5649820A7689D006B97DC /* Main.storyboard in Resources */,
+				07D564B720AB5AB4006B97DC /* leio-mclaren-300912-unsplash.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		752E411B6C3B9138739AABC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TravelBoard/Pods-TravelBoard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TravelBoard/Pods-TravelBoard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2F73A58A2B5AA6E72B5250C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelBoard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		07D5648B20A7689D006B97DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D5649520A7689D006B97DC /* ViewController.swift in Sources */,
+				07D5649520A7689D006B97DC /* LogInViewController.swift in Sources */,
+				07D564B320AB5867006B97DC /* RegisterViewController.swift in Sources */,
+				07D564A620A77618006B97DC /* MessageModel.swift in Sources */,
 				07D5649320A7689D006B97DC /* AppDelegate.swift in Sources */,
+				07D564A820A77628006B97DC /* ProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +411,7 @@
 		};
 		07D564A220A7689D006B97DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB73B7D2386274304F1D323A /* Pods-TravelBoard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +427,7 @@
 		};
 		07D564A320A7689D006B97DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D89632BE4DF873AA03F2425 /* Pods-TravelBoard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
