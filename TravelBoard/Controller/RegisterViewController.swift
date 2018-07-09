@@ -11,14 +11,16 @@ import Firebase
 import FirebaseStorage
 
 class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    //MARK: Variables
+    //MARK: Variables & Constants
     //for image pickers:
     let picker = UIImagePickerController()
-    //Tfor the storage for Firebase:
+    //for the storage for Firebase:
     var userStorage : StorageReference!
-    //the storageURL for the app that we will use
+    var databaseReference : DatabaseReference!
+    
     let storageURL = "gs://travelboard-79fa1.appspot.com"
-    //So that
+
+    let userStorageString = "users"
     
     
 //IBOutlets
@@ -35,14 +37,13 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Change the backbutton item:
-        self.navigationItem.backBarButtonItem?.title = "Welcome"
-        //to be a delegate for the picture picker:
         picker.delegate = self
         //This is to get an object and instantiate the storage reference for a new user
         let storageObject = Storage.storage().reference(forURL: storageURL)
-        userStorage = storageObject.child("users")
-        
+        userStorage = storageObject.child(userStorageString)
+        //userStorageString is just users in string form. But wanted to make it a constant
+        //Database Reference:
+        databaseReference = Database.database().reference()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,20 +53,48 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     //IBOActions:
     @IBAction func registerPressed(_ sender: Any) {
         //first check to make sure no empty strings
-        guard fullName.text != "", nationalityField.text != "", emailInput.text != "", passwordOne.text != "", passwordTwo.text != "", currentCity.text != "" else {
+        guard fullName.text != "", nationalityField.text != "", emailInput.text != "", passwordOne.text != "", passwordTwo.text != "", currentCity.text != "", imagePicked.image != nil else {
             //if there is some empty string then let the user know
-            alertFunc(message: "Some Information Is Missing", title: "Please Fill This All Out", buttonTitle: "Try Again")
+            alertFunc(message: "Some Information Is Missing", title: "Please Fill This All Out Including a Picture", buttonTitle: "Try Again")
             return
         }
         
         
         if passwordOne.text! == passwordTwo.text! {
-            //Authorize here
+            //Authorize a new user here
             Auth.auth().createUser(withEmail: emailInput.text!, password: passwordOne.text!, completion: { (user, error) in
                 if error != nil {
-                    
+                    self.alertFunc(message: error!.localizedDescription, title: "Please Try Again", buttonTitle: "Try Again")
                 }
                 else {
+                    //So no error in authorizing a user so now we need to upload the picture. This creates a new child  of that picture and we call it the UID.jpg:
+                    let imageUploadReference = self.userStorage.child("\(user!.user.uid).jpeg")
+                    //Turn the image into data:
+                    let imageDataToUpload = UIImageJPEGRepresentation(self.imagePicked.image!, 0.5)
+                    //Now upload that using the imageUploadReference
+                    imageUploadReference.putData(imageDataToUpload!, metadata: nil, completion: { (metaData, error) in
+                        if error != nil {
+                            self.alertFunc(message: error!.localizedDescription, title: "Please Try Again", buttonTitle: "Try Again")
+                        }
+                        else {
+                            //So now we have it up on firebase. We download the link to it so that it is easy to capture
+                            imageUploadReference.downloadURL(completion: { (url, error) in
+                                if error != nil {
+                                    self.alertFunc(message: error!.localizedDescription, title: "Please Try Again", buttonTitle: "Try Again")
+                                }
+                                else {
+                                    //This is final else nest -THERE'S SO MANY- so gonna upload to database now
+                                    let userDataInDictForm = Profile(name: self.fullName.text!, imageString: url!.absoluteString, nationality: self.nationalityField.text!, currentCity: self.currentCity.text!, uID: user!.user.uid).turnToDictionary()
+                                    self.databaseReference.child(self.userStorageString).child(user!.user.uid).setValue(userDataInDictForm)
+                                    
+                                    
+                                    
+                                    
+                                }
+                            })
+                        }
+                    })
+                    
                     
                 }
             })
@@ -73,7 +102,6 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         else {
             alertFunc(message: "Passwords Were Different", title: "Please Try Again", buttonTitle: "Try Again")
-            //alertFunc is from the extension
         }
         
     }
@@ -97,6 +125,9 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+
+    
+    
     
 
     //
