@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
+import FirebaseStorage
 
 class LogInViewController: UIViewController {
 
@@ -52,6 +54,16 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
         
         
+    }
+    
+    //Another extension I plan to use: One that does both SVProgressHUD Show and one that
+    func loadingStart(){
+        SVProgressHUD.show()
+        self.view.isUserInteractionEnabled = false
+    }
+    func loadingFinished(){
+        SVProgressHUD.dismiss()
+        self.view.isUserInteractionEnabled = true
     }
     
 }

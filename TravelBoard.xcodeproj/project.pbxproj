@@ -18,6 +18,7 @@
 		07D564B320AB5867006B97DC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D564B220AB5867006B97DC /* RegisterViewController.swift */; };
 		07D564B520AB5A32006B97DC /* daniel-gonzalez-602501-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07D564B420AB5A32006B97DC /* daniel-gonzalez-602501-unsplash.jpg */; };
 		07D564B720AB5AB4006B97DC /* leio-mclaren-300912-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07D564B620AB5AB4006B97DC /* leio-mclaren-300912-unsplash.jpg */; };
+		07F7D57520F6B710002F980B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F7D57420F6B710002F980B /* EditProfileViewController.swift */; };
 		488B6E622E036CF5F0C7FA1A /* Pods_TravelBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E381D82FEDC80C6531F08FC3 /* Pods_TravelBoard.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		07D564B220AB5867006B97DC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		07D564B420AB5A32006B97DC /* daniel-gonzalez-602501-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "daniel-gonzalez-602501-unsplash.jpg"; sourceTree = "<group>"; };
 		07D564B620AB5AB4006B97DC /* leio-mclaren-300912-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "leio-mclaren-300912-unsplash.jpg"; sourceTree = "<group>"; };
+		07F7D57420F6B710002F980B /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		2D89632BE4DF873AA03F2425 /* Pods-TravelBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelBoard/Pods-TravelBoard.release.xcconfig"; sourceTree = "<group>"; };
 		E381D82FEDC80C6531F08FC3 /* Pods_TravelBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB73B7D2386274304F1D323A /* Pods-TravelBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelBoard/Pods-TravelBoard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				07D5649220A7689D006B97DC /* AppDelegate.swift */,
 				07D5649420A7689D006B97DC /* LogInViewController.swift */,
 				07D564B220AB5867006B97DC /* RegisterViewController.swift */,
+				07F7D57420F6B710002F980B /* EditProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			files = (
 				07D5649520A7689D006B97DC /* LogInViewController.swift in Sources */,
 				07D564B320AB5867006B97DC /* RegisterViewController.swift in Sources */,
+				07F7D57520F6B710002F980B /* EditProfileViewController.swift in Sources */,
 				07D564A620A77618006B97DC /* MessageModel.swift in Sources */,
 				07D5649320A7689D006B97DC /* AppDelegate.swift in Sources */,
 				07D564A820A77628006B97DC /* ProfileModel.swift in Sources */,
