@@ -28,13 +28,16 @@ class LogInViewController: UIViewController {
     }
     //MARK: Login
     @IBAction func loginPressed(_ sender: Any) {
+        self.loadingStart()
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
-                print(error!)
+                self.alertFunc(message: error!.localizedDescription, title: "Please Try Again", buttonTitle: "Try Again")
+                self.loadingFinished()
             }
             else {
-                //TODO: Have to get the login to work
-                print("This Worked")
+                //TODO: Have to load up stuff. This is where the table view will get it's stuff
+                self.performSegue(withIdentifier: "LogInComplete", sender: nil)
+                self.loadingFinished()
             }
         }
         

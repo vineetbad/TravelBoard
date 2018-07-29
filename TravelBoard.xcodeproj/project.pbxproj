@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07963DC9210A5EC200611948 /* ListOfPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07963DC8210A5EC200611948 /* ListOfPlacesViewController.swift */; };
 		07D5649320A7689D006B97DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5649220A7689D006B97DC /* AppDelegate.swift */; };
 		07D5649520A7689D006B97DC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5649420A7689D006B97DC /* LogInViewController.swift */; };
 		07D5649820A7689D006B97DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D5649620A7689D006B97DC /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07963DC8210A5EC200611948 /* ListOfPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPlacesViewController.swift; sourceTree = "<group>"; };
 		07D5648F20A7689D006B97DC /* TravelBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D5649220A7689D006B97DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07D5649420A7689D006B97DC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				07D5649420A7689D006B97DC /* LogInViewController.swift */,
 				07D564B220AB5867006B97DC /* RegisterViewController.swift */,
 				07F7D57420F6B710002F980B /* EditProfileViewController.swift */,
+				07963DC8210A5EC200611948 /* ListOfPlacesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				07D564A620A77618006B97DC /* MessageModel.swift in Sources */,
 				07D5649320A7689D006B97DC /* AppDelegate.swift in Sources */,
 				07D564A820A77628006B97DC /* ProfileModel.swift in Sources */,
+				07963DC9210A5EC200611948 /* ListOfPlacesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

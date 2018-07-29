@@ -39,6 +39,10 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //back button to get to Login:
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        
+        
         picker.delegate = self
         //This is to get an object and instantiate the storage reference for a new user
         let storageObject = Storage.storage().reference(forURL: storageURL)
@@ -97,8 +101,10 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
                                     //This is final else nest -THERE'S SO MANY- so gonna upload to database now
                                     let userDataInDictForm = Profile(name: self.fullName.text!, imageString: url!.absoluteString, nationality: self.nationalityField.text!, currentCity: self.currentCity.text!, uID: user!.user.uid).turnToDictionary()
                                     self.databaseReference.child(self.userStorageString).child(user!.user.uid).setValue(userDataInDictForm)
-                                    //Also - once a thing is done then we will perform segue. A lot of this is asyncronous so need to work on it more
-                                    self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+                                    //TODO: - once a thing is done then we will perform segue. A lot of this is asyncronous so need to work on it more
+                                    self.loadingFinished()
+                                    self.performSegue(withIdentifier: "RegisteredSegue", sender: nil)
+                                    
                                     
                                     
                                     
@@ -127,6 +133,14 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         present(picker, animated: true, completion: nil)
         
     }
+    
+    @IBAction func dismissRegisterViewController(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
     
     //MARK: - Next two functions are to be able to pick an image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
