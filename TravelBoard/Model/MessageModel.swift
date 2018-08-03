@@ -9,6 +9,7 @@
 import Foundation
 class Message {
     
-    var senderText : String = ""
-    //var profileSender = Profile()
+    var senderText : String?
+    var uID : String?
 }
+

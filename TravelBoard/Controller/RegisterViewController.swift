@@ -13,6 +13,7 @@ import SVProgressHUD
 
 class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK: Variables & Constants
+    
     //for image pickers:
     let picker = UIImagePickerController()
     //for the storage for Firebase:
@@ -21,11 +22,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     let storageURL = "gs://travelboard-79fa1.appspot.com"
     let userStorageString = "users"
     
-    //Dispatch Group - to deal with asyncronous Firebase work
-    let dispatchGroup = DispatchGroup()
+    //MARK: IBOutlets
     
-    
-//IBOutlets
     @IBOutlet var fullName: UITextField!
     @IBOutlet var nationalityField: UITextField!
     @IBOutlet var emailInput: UITextField!
@@ -35,16 +33,16 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet var currentCity: UITextField!
     
     
-    //Functions and onwards:
+    //MARK: View:
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //back button to get to Login:
+        //back button to get to Login since I decided not to embed in navigation controller:
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
         
         picker.delegate = self
-        //This is to get an object and instantiate the storage reference for a new user
+        //This is to get an object and instantiate the storage reference for a new user:
         let storageObject = Storage.storage().reference(forURL: storageURL)
         userStorage = storageObject.child(userStorageString)
         //userStorageString is just users in string form. But wanted to make it a constant
@@ -52,11 +50,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         databaseReference = Database.database().reference()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    //IBOActions:
+    //MARK: IBActions:
     @IBAction func registerPressed(_ sender: Any) {
         loadingStart()
 
@@ -70,7 +64,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         
         
         if passwordOne.text! == passwordTwo.text! {
-            //Authorize a new user here
+            //Authorize a new user here as long as both passwords match
             Auth.auth().createUser(withEmail: emailInput.text!, password: passwordOne.text!, completion: { (user, error) in
                 if error != nil {
                     self.alertFunc(message: error!.localizedDescription, title: "Please Try Again", buttonTitle: "Try Again")
@@ -90,7 +84,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
 
                         }
                         else {
-                            //So now we have it up on firebase. We download the link to it so that it is easy to capture
+                            //So now we have it up on firebase. We download the link to it so that it is easy to find and we can add it to the user's information
                             imageUploadReference.downloadURL(completion: { (url, error) in
                                 if error != nil {
                                     self.alertFunc(message: error!.localizedDescription, title: "Please Try Again", buttonTitle: "Try Again")
@@ -98,11 +92,12 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
 
                                 }
                                 else {
-                                    //This is final else nest -THERE'S SO MANY- so gonna upload to database now
+                                    //This is final else nest -THERE'S SO MANY- so gonna upload to database now with the imageURL and all the different details the user posted
+                                    //Please see the Profile Model file associated with this
                                     let userDataInDictForm = Profile(name: self.fullName.text!, imageString: url!.absoluteString, nationality: self.nationalityField.text!, currentCity: self.currentCity.text!, uID: user!.user.uid).turnToDictionary()
                                     self.databaseReference.child(self.userStorageString).child(user!.user.uid).setValue(userDataInDictForm)
-                                    //TODO: - once a thing is done then we will perform segue. A lot of this is asyncronous so need to work on it more
                                     self.loadingFinished()
+                                    //Now that it is posted we can performSegue:
                                     self.performSegue(withIdentifier: "RegisteredSegue", sender: nil)
                                     
                                     
@@ -142,7 +137,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     
-    //MARK: - Next two functions are to be able to pick an image
+    //MARK: - IMAGE PICKER Funcs
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let imageSelected = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.imagePicked.image = imageSelected
@@ -161,4 +156,28 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     //
     
 
+}
+
+//Created an extension in order to allow pop up functions whenever there is an error through all VC's.
+extension UIViewController {
+    func alertFunc(message: String, title: String, buttonTitle: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionBack = UIAlertAction(title: buttonTitle, style: .cancel) { (action) in
+        }
+        alert.addAction(actionBack)
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    //Another extension I plan to use: One that does both SVProgressHUD Show and one that dismisses
+    func loadingStart(){
+        SVProgressHUD.show()
+        self.view.isUserInteractionEnabled = false
+    }
+    func loadingFinished(){
+        SVProgressHUD.dismiss()
+        self.view.isUserInteractionEnabled = true
+    }
+    
 }

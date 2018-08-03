@@ -26,6 +26,14 @@ class LogInViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func unwindToLogin(segue:UIStoryboardSegue) {
+        
+        //OVER HERE Make all the Static Var's equal to nil
+        
+    }
+
+    
     //MARK: Login
     @IBAction func loginPressed(_ sender: Any) {
         self.loadingStart()
@@ -47,27 +55,5 @@ class LogInViewController: UIViewController {
 
 }
 
-//Created an extension in order to allow pop up functions whenever there is an error. An extension so that this can be used in every view controller
-extension UIViewController {
-    func alertFunc(message: String, title: String, buttonTitle: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let actionBack = UIAlertAction(title: buttonTitle, style: .cancel) { (action) in
-        }
-        alert.addAction(actionBack)
-        present(alert, animated: true, completion: nil)
-        
-        
-    }
-    
-    //Another extension I plan to use: One that does both SVProgressHUD Show and one that
-    func loadingStart(){
-        SVProgressHUD.show()
-        self.view.isUserInteractionEnabled = false
-    }
-    func loadingFinished(){
-        SVProgressHUD.dismiss()
-        self.view.isUserInteractionEnabled = true
-    }
-    
-}
+
 

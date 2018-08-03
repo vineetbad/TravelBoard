@@ -16,20 +16,14 @@ class ListOfPlacesViewController: UIViewController, UITableViewDelegate, UITable
     
     //IBOutlets:
     @IBOutlet var citiesListTable: UITableView!
-    @IBOutlet var logOutOutlet: UIBarButtonItem!
     
-    @IBAction func logOutButton(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
-        
-    }
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         citiesListTable.delegate = self
         citiesListTable.dataSource = self
-        self.logOutOutlet.title = "Log Out"
         
 
         // Do any additional setup after loading the view.
@@ -44,14 +38,14 @@ class ListOfPlacesViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = placesArray[indexPath.row]
-        cell.textLabel?.font = UIFont(name: "Noteworthy-Bold", size: 20.0)
+        cell.textLabel?.font = UIFont(name: "HiraginoSans-W6", size: 18.0)
         return cell
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //TODO: Need to make it so that selecting something here allows you to go to the travel Board. This is where I will use the thing there. 
-        <#code#>
+        //TODO: Need to make it so that selecting something here allows you to go to the travel Board. This is where I will use the thing there.
+        
     }
     
 
